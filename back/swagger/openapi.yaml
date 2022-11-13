@@ -1,0 +1,139 @@
+swagger: "2.0"
+info:
+  version: 1.0.0
+  title: GoogleCalendar-API-docs
+  description: GoogleCalendar API문서
+  servers:
+    - description: GoogleCalendar-Clone API
+      url: http://www.groupcalendars.shop/
+    - description: GoogleCalendar-Clone dev
+      url: http://localhost:80/
+tags:
+  - name: auth
+    description: API about auth
+  - name: calendar
+    description: API about calendar
+  - name: event
+    description: API about event
+  - name: alert
+    description: API about alert
+
+paths:
+  $ref: "./authAPI.yaml"
+
+returnUser:
+  description: 성공
+  schema:
+    properties:
+      id:
+        type: integer
+      email:
+        type: string
+      nickname:
+        type: string
+      ProfileImages:
+        type: object
+        properties:
+          src:
+            type: string
+returnCalendar:
+  description: 성공
+  schema:
+    properties:
+      id:
+        type: string
+        example: true
+      name:
+        type: string
+        example: true
+      color:
+        type: string
+        example: true
+      OwnerId:
+        type: string
+        example: true
+returnEvent:
+  description: 성공
+  schema:
+    properties:
+      id:
+        type: integer
+      name:
+        type: string
+      busy:
+        type: integer
+      permission:
+        type: integer
+      memo:
+        type: string
+      startTime:
+        type: string
+      endTime:
+        type: string
+      allDay:
+        type: boolean
+        example: true
+      eventHostEmail:
+        type: integer
+      CalendarId:
+        type: integer
+returnChildEvent:
+  description: 성공
+  schema:
+    properties:
+      id:
+        type: integer
+      name:
+        type: string
+      color:
+        type: string
+      permission:
+        type: integer
+      memo:
+        type: string
+      startTime:
+        type: string
+      endTime:
+        type: string
+      allDay:
+        type: boolean
+returnPrivateEvent:
+  description: 성공
+  schema:
+    properties:
+      id:
+        type: integer
+      name:
+        type: string
+      busy:
+        type: integer
+      memo:
+        type: string
+      startTime:
+        type: string
+      endTime:
+        type: string
+      groupEventId:
+        type: integer
+      state:
+        type: integer
+      allDay:
+        type: boolean
+        example: true
+      privateCalendarId:
+        type: integer
+success:
+  description: 성공
+  schema:
+    properties:
+      success:
+        type: boolean
+        example: true
+
+serverError:
+  description: 서버 에러
+  schema:
+    properties:
+      message:
+        type: string
+        example: 서버 에러
