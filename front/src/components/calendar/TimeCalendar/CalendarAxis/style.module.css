@@ -1,0 +1,4 @@
+.calendar_axis { display: flex; height: 51px;}
+.calendar_axis_text { font-size: 10px; font-weight: 300; color: #727272; width: 50px; text-align: right;}
+.calendar_axis_text > em { position: relative; top: -6px; right: 8px; }
+.calendar_axis_line { width: 10px;  border-right: 1px solid #e6e6e6; border-bottom: 1px solid #e6e6e6; }
